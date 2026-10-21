@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000';
-
+const API_URL = 'https://blog-backend-dt6z.onrender.com';
 export const getPosts = () => axios.get(`${API_URL}/posts`);
 
 export const createPost = (postData, token) =>

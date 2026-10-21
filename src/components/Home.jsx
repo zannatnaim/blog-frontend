@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getPosts, deletePost } from '../api';
 
 function Home({ token }) {
@@ -25,6 +26,9 @@ function Home({ token }) {
                     <p>{post.content}</p>
                     {token && (
                         <div className="post-actions">
+                            <Link to={`/edit/${post._id}`}>
+                                <button className="edit-btn">Edit</button>
+                            </Link>
                             <button className="delete-btn" onClick={() => handleDelete(post._id)}>
                                 Delete
                             </button>
